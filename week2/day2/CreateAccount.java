@@ -15,14 +15,22 @@ public class CreateAccount {
 		EdgeDriver create= new EdgeDriver();
 		create.navigate().to("http://leaftaps.com/opentaps/control/main");
 		create.manage().window().maximize();
+		Thread.sleep(1000);
 		create.findElement(By.name("USERNAME")).sendKeys("demosalesmanager");
+		Thread.sleep(1000);
 		create.findElement(By.name("PASSWORD")).sendKeys("crmsfa");
+		Thread.sleep(1000);
 		create.findElement(By.className("decorativeSubmit")).click();
+		Thread.sleep(1000);
 		create.findElement(By.linkText("CRM/SFA")).click();
+		Thread.sleep(1000);
 		
 		create.findElement(By.linkText("Accounts")).click();
+		Thread.sleep(1000);
 		create.findElement(By.linkText("Create Account")).click();
-		create.findElement(By.id("accountName")).sendKeys("Chandru1411");
+		Thread.sleep(1000);
+		create.findElement(By.id("accountName")).sendKeys("Chandran1411");
+		Thread.sleep(1000);
 		create.findElement(By.name("description")).sendKeys("Selenium Automation Tester");
 		Thread.sleep(1000);
 		
@@ -54,13 +62,13 @@ public class CreateAccount {
 		create.findElement(By.className("smallSubmit")).click();
 		
 		String title = create.getTitle();
-		if (title.contains("Chandru1411  (13276)")) {
+		if (title.contains("Account Details | opentaps CRM")) {
 					System.out.println("Title is verified");	
 		}
 			 else {
 				 System.out.println("Title is not Verified");
 			} 	
-			create.close();
+			//create.close();
 		}
 		
 	}
